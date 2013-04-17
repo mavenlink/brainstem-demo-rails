@@ -1,0 +1,7 @@
+<a href="#/widgets/new">New Widget</a>
+
+<div>
+  Widgets:
+</div>
+
+<ul id="widgets-list"></ul>

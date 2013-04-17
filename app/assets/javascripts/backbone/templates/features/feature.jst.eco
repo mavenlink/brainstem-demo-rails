@@ -1,0 +1,3 @@
+<li class='feature'>
+  <div class="name"><%= @model.get('name') %></div>
+</li>

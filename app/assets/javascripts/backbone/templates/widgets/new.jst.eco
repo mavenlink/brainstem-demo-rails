@@ -1,0 +1,12 @@
+Let's make a new Widget!
+
+<form>
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" />
+
+  <label for="name">Location</label>
+  <select id='location'></select>
+
+  <input type=submit name=submit value="Save" \>
+  <a href="/#widgets">Cancel</a>
+</form>
