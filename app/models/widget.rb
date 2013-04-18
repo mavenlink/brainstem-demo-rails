@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :name, :legacy, :location
+  attr_accessible :name, :legacy, :location, :location_id
 
   belongs_to :location
   has_many :features

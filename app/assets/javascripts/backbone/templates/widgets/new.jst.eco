@@ -1,12 +1,16 @@
-Let's make a new Widget!
+<h3>Let's make a new Widget!</h3>
+
+<br/>
 
 <form>
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" />
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required="required" />
+  <br />
 
-  <label for="name">Location</label>
-  <select id='location'></select>
+  <label for="location">Location:</label>
+  <select id='location' required="required"></select>
+  <br />
 
-  <input type=submit name=submit value="Save" \>
   <a href="/#widgets">Cancel</a>
+  <input type=submit name=submit value="Create Widget" \>
 </form>

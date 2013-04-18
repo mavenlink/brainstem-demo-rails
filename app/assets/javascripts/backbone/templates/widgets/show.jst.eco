@@ -1,0 +1,15 @@
+<% if @model.loaded: %>
+  <h3>Features of <%= @model.get("name") %></h3>
+  <div class="location"><span>Location: </span><%= @model.get('location').get('name') %></div>
+  <div>
+    Features:
+  </div>
+  <ul class='features'>
+    <% for feature in @model.get('features').models: %>
+      <%- JST["backbone/templates/features/editable_feature"](model: feature) %>
+    <% end %>
+    <%- JST["backbone/templates/features/editable_feature"](model: new Models.Feature()) %>
+  </ul>
+
+<% else: %>
+  Just a moment...

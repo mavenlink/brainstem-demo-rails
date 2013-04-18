@@ -13,7 +13,7 @@ module Api
       end
 
       def show
-        render :json => present_object(Location.find(params[:id])
+        render :json => present_object(Location.find(params[:id]))
       end
     end
   end

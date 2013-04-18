@@ -2,11 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,9 +22,8 @@ gem 'jquery-rails'
 # gem 'brainstem-js'
 
 gem 'brainstem', :git => "git@github.com:mavenlink/brainstem.git", :branch => "master"
-gem 'brainstem-js', :git => "git@github.com:mavenlink/brainstem-js.git", :branch => "master"
+gem 'brainstem-js', :git => "git@github.com:mavenlink/brainstem-js.git", :branch => "backbone-1.0"
 gem 'eco'
-gem 'rails-backbone'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

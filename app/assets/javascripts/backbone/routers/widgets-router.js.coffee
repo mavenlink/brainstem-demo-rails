@@ -2,10 +2,10 @@ window.Routers ?= {}
 
 class Routers.WidgetsRouter extends Backbone.Router
   routes:
-    "widgets/new"             : "new"
-    "widgets/:id/edit"        : "edit"
-    "widgets/:id"             : "show"
     "widgets"                 : "index"
+    "widgets/new"             : "new"
+    "widgets/:id"             : "show"
+    "*path"                   : "redirectToWidgets"
 
   new: =>
     view = new Views.Widgets.NewView()
@@ -19,6 +19,5 @@ class Routers.WidgetsRouter extends Backbone.Router
     view = new Views.Widgets.ShowView(id: id)
     $('#content').html(view.render().$el)
 
-  edit: (id) =>
-    view = new Views.Widgets.EditView(id: id)
-    $('#content').html(view.render().$el)
+  redirectToWidgets: =>
+    @navigate "/widgets", true

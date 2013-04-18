@@ -1,0 +1,5 @@
+<li class='feature'>
+  <input type="text" name="name" value="<%= @model.get('name') %>" />
+  <a href="#" class='save'>Save</a>
+  <a href="#" class='delete'>Delete</a>
+</li>

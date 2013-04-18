@@ -2,7 +2,10 @@
   <div class="name"><span>Name: </span><%= @model.get('name') %></div>
   <div class="location"><span>Location: </span><%= @model.get('location').get('name') %></div>
 
-  <div>Features:</div>
+  <div>
+    Features:
+    <a href="#widgets/<%= @model.get('id') %>">Edit features</a>
+  </div>
   <ul class='features'>
     <% for feature in @model.get('features').models: %>
       <%- JST["backbone/templates/features/feature"](model: feature) %>
