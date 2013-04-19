@@ -37,7 +37,7 @@ module Api
 
       def destroy
         @widget.destroy
-        head 201
+        render :json => { :success => true }
       end
 
       protected

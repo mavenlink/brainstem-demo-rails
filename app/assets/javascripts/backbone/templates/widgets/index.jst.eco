@@ -1,7 +1,9 @@
-<a href="#/widgets/new">New Widget</a>
-
-<div>
-  Widgets:
+<div class='header'>
+  <a href="#/widgets/new">Add new Widget</a>
 </div>
+
+<h3>
+  Ship's Widgets
+</h3>
 
 <ul id="widgets-list"></ul>

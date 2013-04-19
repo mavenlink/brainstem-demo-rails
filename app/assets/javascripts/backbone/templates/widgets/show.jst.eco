@@ -1,8 +1,12 @@
+<div class='header'>
+  <a href="#/widgets">View all Widgets</a>
+</div>
+
 <% if @model.loaded: %>
-  <h3>Features of <%= @model.get("name") %></h3>
-  <div class="location"><span>Location: </span><%= @model.get('location').get('name') %></div>
+  <h3><%= @model.get("name") %></h3>
+  <div class="location"><span class='label'>Location:</span> <span class='value'><%= @model.get('location').get('name') %></span></div>
   <div>
-    Features:
+    Features of <%= @model.get("name") %>:
   </div>
   <ul class='features'>
     <% for feature in @model.get('features').models: %>

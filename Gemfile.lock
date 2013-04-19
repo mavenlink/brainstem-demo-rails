@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:mavenlink/brainstem-js.git
-  revision: 5ffe831cd402c4bef68585e4e616868a800bcc65
+  revision: 41183abf7f5fd5f61986e12c25534a4d589a5bed
   branch: backbone-1.0
   specs:
     brainstem-js (0.1)

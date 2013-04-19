@@ -1,14 +1,16 @@
 <li class="widget">
-  <div class="name"><span>Name: </span><%= @model.get('name') %></div>
-  <div class="location"><span>Location: </span><%= @model.get('location').get('name') %></div>
+  <div class="name">
+    <span class='value'><%= @model.get('name') %></span>
+    [<a href="#widgets/<%= @model.get('id') %>">edit</a>]
+  </div>
+  <div class="location"><span class='label'>Location:</span> <span class='value'><%= @model.get('location').get('name') %></span></div>
 
   <div>
-    Features:
-    <a href="#widgets/<%= @model.get('id') %>">Edit features</a>
+    <%= if @model.get('features').length > 0 then 'Features:' else 'No Features' %>
+    <ul class='features'>
+      <% for feature in @model.get('features').models: %>
+        <%- JST["backbone/templates/features/feature"](model: feature) %>
+      <% end %>
+    </ul>
   </div>
-  <ul class='features'>
-    <% for feature in @model.get('features').models: %>
-      <%- JST["backbone/templates/features/feature"](model: feature) %>
-    <% end %>
-  </ul>
 </li>

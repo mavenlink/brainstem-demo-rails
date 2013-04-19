@@ -4,6 +4,7 @@ BrainstemDemoRails::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :widgets
+      resources :features
       resources :locations
     end
   end

@@ -1,16 +1,14 @@
-<h3>Let's make a new Widget!</h3>
-
-<br/>
+<h3>Add a Widget</h3>
 
 <form>
-  <label for="name">Name:</label>
+  <label for="name">Widget Name:</label>
   <input type="text" id="name" name="name" required="required" />
   <br />
 
-  <label for="location">Location:</label>
+  <label for="location">Widget Location:</label>
   <select id='location' required="required"></select>
   <br />
 
-  <a href="/#widgets">Cancel</a>
   <input type=submit name=submit value="Create Widget" \>
+  <a href="/#widgets">Cancel</a>
 </form>

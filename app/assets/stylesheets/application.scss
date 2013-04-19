@@ -11,3 +11,44 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  margin: 20px;
+  color: #333;
+}
+
+.header {
+  float: right;
+  margin: 0 50px;
+}
+
+.name .value {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.location .value {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &#widgets-list {
+    padding: 10px;
+    border: 1px solid silver;
+
+    li.widget {
+      margin-bottom: 20px;
+
+      ul.features {
+        li.feature {
+          margin-left: 30px;
+          list-style-type: decimal;
+        }
+      }
+    }
+  }
+}
