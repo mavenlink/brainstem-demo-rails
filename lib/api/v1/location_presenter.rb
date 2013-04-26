@@ -10,7 +10,6 @@ module Api
 
       def present(location)
         {
-            :id             => location.id,
             :name           => location.name,
             :widgets        => association(:widgets)
         }

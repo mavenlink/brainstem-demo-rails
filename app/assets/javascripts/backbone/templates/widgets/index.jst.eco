@@ -4,6 +4,13 @@
 
 <h3>
   Ship's Widgets
+
+  <div id='filter'>
+    <form>
+      In: <select id='location'></select>
+    </form>
+  </div>
 </h3>
+
 
 <ul id="widgets-list"></ul>

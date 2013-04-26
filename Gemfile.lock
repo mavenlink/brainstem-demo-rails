@@ -1,14 +1,14 @@
 GIT
   remote: git@github.com:mavenlink/brainstem-js.git
-  revision: 41183abf7f5fd5f61986e12c25534a4d589a5bed
+  revision: 6f2d9ab148c1211d67220330d90dccf79491e8ac
   branch: backbone-1.0
   specs:
     brainstem-js (0.1)
 
 GIT
   remote: git@github.com:mavenlink/brainstem.git
-  revision: 04dc7fd89e25b9169de928b331d90fa97d63b761
-  branch: master
+  revision: 4a23dd72e6219dad2eee5e05cb476016205c9bee
+  branch: return_objects
   specs:
     brainstem (0.0.2)
       activerecord (~> 3.0)

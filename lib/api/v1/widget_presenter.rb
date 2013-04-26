@@ -12,13 +12,16 @@ module Api
         scope.joins(:locations).where("locations.name = ?", location_name)
       end
 
+      filter :location_id do |scope, location_id|
+        scope.where(:location_id => location_id)
+      end
+
       filter :include_legacy_widgets, :default => false do |scope, bool|
         bool ? scope : scope.without_legacy_widgets
       end
 
       def present(widget)
         {
-            :id             => widget.id,
             :name           => widget.name,
             :legacy         => widget.legacy?,
             :updated_at     => widget.updated_at,

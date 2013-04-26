@@ -10,7 +10,6 @@ module Api
 
       def present(feature)
         {
-            :id             => feature.id,
             :updated_at     => feature.updated_at,
             :created_at     => feature.created_at,
             :name           => feature.name,
