@@ -18,11 +18,8 @@ end
 
 gem 'jquery-rails'
 
-# gem 'brainstem'
-# gem 'brainstem-js'
-
-gem 'brainstem', :git => "git@github.com:mavenlink/brainstem.git", :branch => "return_objects"
-gem 'brainstem-js', :git => "git@github.com:mavenlink/brainstem-js.git", :branch => "backbone-1.0"
+gem 'brainstem'
+gem 'brainstem-js'
 gem 'eco'
 
 # To use ActiveModel has_secure_password
