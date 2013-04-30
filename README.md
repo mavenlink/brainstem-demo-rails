@@ -24,8 +24,8 @@ Then visit [localhost:3000](http://localhost:3000) to play with the app.
 
 * All of the Backbone code is in [app/assets/javascripts/backbone](app/assets/javascripts/backbone).
 * Start by skimming the [models](app/assets/javascripts/backbone/models), then
-* checkout how we setup the [base application in application.js.coffee](app/assets/javascripts/backbone/application.js.coffee).
-* Finally, checkout the [views](app/assets/javascripts/backbone/views) and eco [templates](app/assets/javascripts/backbone/templates) to see Brainstem.js in action.
+* checkout how we setup the [base application in application.js.coffee](app/assets/javascripts/application.js.coffee).
+* Finally, checkout the [views](app/assets/javascripts/backbone/views/widgets) and eco [templates](app/assets/javascripts/backbone/templates) to see Brainstem.js in action.
 
 # Contributing
 
