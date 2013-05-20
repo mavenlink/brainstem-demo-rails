@@ -3,6 +3,7 @@ class ApiController < ApplicationController
 
   before_filter :api_authenticate, :except => [:page_not_found]
 
+  rescue_from Brainstem::SearchUnavailableError, :with => :search_unavailable
   rescue_from ActiveRecord::RecordNotFound,
               ActionController::RoutingError,
               ::AbstractController::ActionNotFound, :with => :page_not_found
@@ -11,6 +12,10 @@ class ApiController < ApplicationController
 
   def page_not_found
     render :json => { :errors => ['Page not found'] }, :status => 404
+  end
+
+  def search_unavailable
+    render :json => { :errors => ['Search is currently unavailable'] }, :status => 503
   end
 
   def api_authenticate
