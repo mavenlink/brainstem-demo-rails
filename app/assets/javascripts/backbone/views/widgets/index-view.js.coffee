@@ -6,6 +6,7 @@ class Views.Widgets.IndexView extends Backbone.View
 
   events:
     "change #location": "filter"
+    "keyup #search":    "filter"
 
   initialize: ->
     @collection = base.data.loadCollection "widgets", include: ["location", "features"], order: 'updated_at:desc'
@@ -34,16 +35,16 @@ class Views.Widgets.IndexView extends Backbone.View
   filter: (e) =>
     e.preventDefault()
     id = @$("#location").val()
-    if id > 0
-      filters = { location_id: id }
-    else
-      filters = null
-    base.data.loadCollection "widgets",
-                             collection: @collection,
-                             reset: true,
-                             filters: filters,
-                             include: ["location", "features"],
-                             order: 'updated_at:desc'
+    query = @$("#search").val()
+
+    options = {}
+    options.collection = @collection
+    options.reset = true
+    options.include = ["location", "features"]
+    options.filters = { location_id: id } if id > 0
+    options.search = query if query
+
+    base.data.loadCollection "widgets", options
 
   addLocations: =>
     if @$("#location option").length == 0
