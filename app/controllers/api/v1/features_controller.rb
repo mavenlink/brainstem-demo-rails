@@ -4,35 +4,35 @@ module Api
       before_filter :load_feature, :only => [:show, :update, :destroy]
 
       def index
-        render :json => present("features") {
+        render_api_index("features") {
           Feature.unscoped
         }
       end
 
       def show
-        render :json => present_object(@feature)
+        render_api_model!(@feature)
       end
 
       def create
         @feature = Feature.create(params[:feature])
         if @feature.save
-          render :json => present_object(@feature)
+          render_api_model(@feature)
         else
-          render :json => {:errors => @feature.errors.full_messages}, :status => :unprocessable_entity
+          render_api_errors(@feature)
         end
       end
 
       def update
         if @feature.update_attributes(params[:feature])
-          render :json => present_object(@feature)
+          render_api_model(@feature)
         else
-          render :json => {:errors => @feature.errors.full_messages}, :status => :unprocessable_entity
+          render_api_errors(@feature)
         end
       end
 
       def destroy
         @feature.destroy
-        render :json => { :success => true }
+        head 204
       end
 
       protected

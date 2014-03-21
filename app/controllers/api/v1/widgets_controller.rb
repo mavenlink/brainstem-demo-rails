@@ -4,7 +4,7 @@ module Api
       before_filter :load_widget, :only => [:show, :update, :destroy]
 
       def index
-        render :json => present("widgets") {
+        render_api_index("widgets") {
           # Return an ARel scope on which all further filtering will be applied.
           # For example:
           #  Widget.relavent_for_api
@@ -15,29 +15,29 @@ module Api
       end
 
       def show
-        render :json => present_object(@widget)
+        render_api_model!(@widget)
       end
 
       def create
         @widget = Widget.create(params[:widget])
         if @widget.save
-          render :json => present_object(@widget)
+          render_api_model(@widget)
         else
-          render :json => {:errors => @widget.errors.full_messages}, :status => :unprocessable_entity
+          render_api_errors(@widget)
         end
       end
 
       def update
         if @widget.update_attributes(params[:widget])
-          render :json => present_object(@widget)
+          render_api_model(@widget)
         else
-          render :json => {:errors => @widget.errors.full_messages}, :status => :unprocessable_entity
+          render_api_errors(@widget)
         end
       end
 
       def destroy
         @widget.destroy
-        render :json => { :success => true }
+        head 204
       end
 
       protected

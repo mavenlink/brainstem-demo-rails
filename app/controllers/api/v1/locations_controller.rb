@@ -2,7 +2,7 @@ module Api
   module V1
     class LocationsController < ApiController
       def index
-        render :json => present("locations") {
+        render_api_index("locations") {
           # Return an ARel scope on which all further filtering will be applied.
           # For example:
           #  Location.relavent_for_api
@@ -13,7 +13,7 @@ module Api
       end
 
       def show
-        render :json => present_object(Location.find(params[:id]))
+        render_api_model!(Location.find(params[:id]))
       end
     end
   end
