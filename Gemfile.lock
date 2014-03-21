@@ -1,3 +1,18 @@
+GIT
+  remote: git://github.com/mavenlink/brainstem-js.git
+  revision: 4703e9bf5d7d076f5a9b8a1fdb46c611d39fdd02
+  ref: 4703e9bf5d7d076f5a9b8a1fdb46c611d39fdd02
+  specs:
+    brainstem-js (0.2.1)
+
+GIT
+  remote: git://github.com/mavenlink/brainstem.git
+  revision: c7c414da1d1b71b426a7216572a746abd7ca6e0d
+  ref: c7c414da1d1b71b426a7216572a746abd7ca6e0d
+  specs:
+    brainstem (0.2.1)
+      activerecord (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,8 +126,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  brainstem
-  brainstem-js
+  brainstem!
+  brainstem-js!
   coffee-rails (~> 3.2.1)
   eco
   jquery-rails

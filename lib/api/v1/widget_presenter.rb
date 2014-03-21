@@ -25,6 +25,22 @@ module Api
         bool ? scope : scope.without_legacy_widgets
       end
 
+      # This is where you would wire in your search system, such as Elastcsearch or Solr.
+      search do |search_string, options|
+        scope = Widget.where("name like '%#{search_string}%'")
+
+        if options[:location_id]
+          scope = scope.where(:location_id => options[:location_id])
+        end
+
+        results = scope.pluck('id')
+        [results, results.count]
+
+        # if robust_search_system_is_down?
+          #[false, 0]
+        # end
+      end
+
       # Return a ruby hash that can be converted to JSON
       def present(widget)
         {
