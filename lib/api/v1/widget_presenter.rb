@@ -37,7 +37,7 @@ module Api
         [results, results.count]
 
         # if robust_search_system_is_down?
-          #[false, 0]
+        #  [false, 0]
         # end
       end
 
