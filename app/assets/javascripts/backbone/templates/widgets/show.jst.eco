@@ -2,7 +2,7 @@
   <a href="#/widgets">View all Widgets</a>
 </div>
 
-<% if @model.loaded: %>
+<% if @model: %>
   <h3><%= @model.get("name") %></h3>
   <div class="location"><span class='label'>Location:</span> <span class='value'><%= @model.get('location').get('name') %></span></div>
   <div>
