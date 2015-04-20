@@ -12,7 +12,7 @@ module Api
 
       # Optional filter that applies a lambda.
       filter :location_name do |scope, location_name|
-        scope.joins(:locations).where("locations.name = ?", location_name)
+        scope.joins(:location).where("locations.name = ?", location_name)
       end
 
       # Optional filter that applies a lambda.
