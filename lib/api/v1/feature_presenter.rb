@@ -1,20 +1,21 @@
 module Api
   module V1
     class FeaturePresenter < Brainstem::Presenter
-      presents "Feature"
-
+      presents Feature
+      
       sort_order :updated_at, "features.updated_at"
       sort_order :created_at, "features.created_at"
 
       default_sort_order "created_at:desc"
 
-      def present(feature)
-        {
-            :updated_at     => feature.updated_at,
-            :created_at     => feature.created_at,
-            :name           => feature.name,
-            :widget         => association(:widget)
-        }
+      fields do
+        field :name, :string, "the name of this Feature"
+        field :updated_at, :datetime, "the time when this Feature was last updated"
+        field :created_at, :datetime, "the time when this Feature was created"
+      end
+      
+      associations do
+        association :widget, Widget, "the Widget associated with this Feature"
       end
     end
   end

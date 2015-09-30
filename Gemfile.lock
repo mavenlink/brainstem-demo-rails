@@ -1,17 +1,17 @@
 GIT
   remote: git://github.com/mavenlink/brainstem-js.git
-  revision: 4703e9bf5d7d076f5a9b8a1fdb46c611d39fdd02
-  ref: 4703e9bf5d7d076f5a9b8a1fdb46c611d39fdd02
+  revision: bbb8a2685d70241360ba83ceaadf99cfff35e8d2
   specs:
-    brainstem-js (0.2.1)
+    brainstem-js (0.3.1)
 
 GIT
   remote: git://github.com/mavenlink/brainstem.git
-  revision: c7c414da1d1b71b426a7216572a746abd7ca6e0d
-  ref: c7c414da1d1b71b426a7216572a746abd7ca6e0d
+  revision: 949596b71b228790140c5e383775846ee320dc5a
+  branch: presenter_dsl
   specs:
-    brainstem (0.2.1)
-      activerecord (~> 3.0)
+    brainstem (1.0.0.pre)
+      activerecord (>= 3.2)
+      activesupport
 
 GEM
   remote: https://rubygems.org/
@@ -44,9 +44,6 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.3)
-    brainstem (0.2.4)
-      activerecord (>= 3.0)
-    brainstem-js (0.3.0)
     builder (3.0.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -63,7 +60,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
-    i18n (0.6.9)
+    i18n (0.7.0)
     journey (1.0.4)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
@@ -74,7 +71,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    multi_json (1.9.2)
+    multi_json (1.11.2)
     polyglot (0.3.4)
     rack (1.4.5)
     rack-cache (1.2)
@@ -117,7 +114,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.39)
+    tzinfo (0.3.44)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)

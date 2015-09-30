@@ -18,8 +18,8 @@ end
 
 gem 'jquery-rails'
 
-gem 'brainstem', :git => 'git://github.com/mavenlink/brainstem.git', :ref => 'c7c414da1d1b71b426a7216572a746abd7ca6e0d'
-gem 'brainstem-js', :git => 'git://github.com/mavenlink/brainstem-js.git', :ref => '4703e9bf5d7d076f5a9b8a1fdb46c611d39fdd02'
+gem 'brainstem', git: 'git://github.com/mavenlink/brainstem.git', branch: 'presenter_dsl'
+gem 'brainstem-js', git: 'git://github.com/mavenlink/brainstem-js.git'
 gem 'eco'
 
 # To use ActiveModel has_secure_password

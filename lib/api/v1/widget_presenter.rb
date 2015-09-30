@@ -1,7 +1,7 @@
 module Api
   module V1
     class WidgetPresenter < Brainstem::Presenter
-      presents "Widget"
+      presents Widget
 
       # Available sort orders to expose through the API
       sort_order :updated_at, "widgets.updated_at"
@@ -17,20 +17,20 @@ module Api
 
       # Optional filter that applies a lambda.
       filter :location_id do |scope, location_id|
-        scope.where(:location_id => location_id)
+        scope.where(location_id: location_id)
       end
 
       # Filter with an overridable default that runs on all requests.
-      filter :include_legacy_widgets, :default => false do |scope, bool|
+      filter :include_legacy_widgets, default: false do |scope, bool|
         bool ? scope : scope.without_legacy_widgets
       end
 
-      # This is where you would wire in your search system, such as Elastcsearch or Solr.
+      # This is where you would wire in your search system, such as elasticsearch or solr.
       search do |search_string, options|
-        scope = Widget.where("name like '%#{search_string}%'")
+        scope = Widget.where("name like ?", "%#{search_string}%")
 
         if options[:location_id]
-          scope = scope.where(:location_id => options[:location_id])
+          scope = scope.where(location_id: options[:location_id])
         end
 
         results = scope.pluck('id')
@@ -41,17 +41,16 @@ module Api
         # end
       end
 
-      # Return a ruby hash that can be converted to JSON
-      def present(widget)
-        {
-            :name           => widget.name,
-            :legacy         => widget.legacy?,
-            :updated_at     => widget.updated_at,
-            :created_at     => widget.created_at,
-            # Associations can be included by request
-            :features       => association(:features),
-            :location       => association(:location)
-        }
+      fields do
+        field :name, :string, "this Widget's name"
+        field :legacy, :boolean, "whether or not this is a legacy Widget", via: :legacy?
+        field :updated_at, :datetime, "the time when this Widget was last updated"
+        field :created_at, :datetime, "the time when this Widget was created"
+      end
+      
+      associations do
+        association :features, Feature, "this Widget's Features"
+        association :location, Location, "this Widget's Location"
       end
     end
   end

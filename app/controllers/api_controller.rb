@@ -33,11 +33,11 @@ class ApiController < ApplicationController
   # The following methods will likely be pulled into Brainstem::ControllerMethods soon.
 
   def render_api_index(name, options = {}, &scope)
-    render :json => present(name, options, &scope)
+    render :json => brainstem_present(name, options, &scope)
   end
 
   def render_api_model(model, options = {})
-    render :json => present_object(model, options)
+    render :json => brainstem_present_object(model, options)
   end
 
   # This method will raise an ActiveRecord::RecordNotFound error when no model exists, instead of giving an empty set.
