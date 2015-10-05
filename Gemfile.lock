@@ -6,8 +6,8 @@ GIT
 
 GIT
   remote: git://github.com/mavenlink/brainstem.git
-  revision: 949596b71b228790140c5e383775846ee320dc5a
-  branch: presenter_dsl
+  revision: 862db8ab3960d44d532f68b5056e1c798faf7cd8
+  branch: master
   specs:
     brainstem (1.0.0.pre)
       activerecord (>= 3.2)
@@ -114,7 +114,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.44)
+    tzinfo (0.3.45)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)

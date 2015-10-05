@@ -18,7 +18,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'brainstem', git: 'git://github.com/mavenlink/brainstem.git', branch: 'presenter_dsl'
+gem 'brainstem', git: 'git://github.com/mavenlink/brainstem.git', branch: 'master'
 gem 'brainstem-js', git: 'git://github.com/mavenlink/brainstem-js.git'
 gem 'eco'
 
